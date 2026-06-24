@@ -87,12 +87,25 @@ class Program
 
         if (exito)
         {
-            Console.WriteLine();
-            Console.WriteLine("RECORRIDO:");
+           Console.WriteLine();
+    Console.WriteLine("========================================");
+    Console.WriteLine("       RECORRIDO ENCONTRADO");
+    Console.WriteLine("========================================");
+    Console.WriteLine();
 
-            solver.MostrarTablero(
-                tablero,
-                n);
+    solver.MostrarTablero(
+        tablero,
+        n);
+
+    Console.WriteLine();
+    Console.WriteLine("========================================");
+    Console.WriteLine("         RESUMEN DEL RECORRIDO");
+    Console.WriteLine("========================================");
+    Console.WriteLine($"Tamaño del terreno       : {n} x {n}");
+    Console.WriteLine($"Posición inicial         : ({x}, {y})");
+    Console.WriteLine($"Parcelas recorridas      : {movimientos.Count}");
+    Console.WriteLine($"Último paso registrado   : {movimientos.Count - 1}");
+    Console.WriteLine("========================================");
         }
         else
         {
@@ -114,9 +127,14 @@ class Program
                 movimientos);
 
         
-        Console.WriteLine();
-        Console.WriteLine(
-            $"Simulación guardada con ID {simulacionId}");
+       Console.WriteLine();
+Console.WriteLine("========================================");
+Console.WriteLine("      SIMULACIÓN ALMACENADA");
+Console.WriteLine("========================================");
+Console.WriteLine($"ID generado : {simulacionId}");
+Console.WriteLine("========================================");
+
+database.MostrarUltimos5Movimientos(simulacionId);
 
 
         database.MostrarUltimos5Movimientos(

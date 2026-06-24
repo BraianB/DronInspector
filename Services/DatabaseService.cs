@@ -1,4 +1,5 @@
 namespace DronInspector.Services;
+
 using DronInspector.Models;
 using Npgsql;
 
@@ -137,7 +138,7 @@ public class DatabaseService
             {
                 // Handle rollback failure if necessary
             }
-            
+
             throw;
         }
     }
@@ -175,8 +176,9 @@ public class DatabaseService
             command.ExecuteReader();
 
         Console.WriteLine();
-        Console.WriteLine(
-            $"ULTIMOS 5 MOVIMIENTOS DE LA SIMULACION {masterId}");
+        Console.WriteLine("========================================");
+        Console.WriteLine($" ÚLTIMOS 5 MOVIMIENTOS - SIMULACIÓN {masterId}");
+        Console.WriteLine("========================================");
 
         while (reader.Read())
         {
@@ -204,9 +206,8 @@ public class DatabaseService
                 pasoReal =
                     pasoGuardado / 2;
             }
-
             Console.WriteLine(
-                $"ID:{id} Paso:{pasoReal} Posición:({x},{y})");
+                    $"Registro: {id,-4} | Paso: {pasoReal,-3} | Posición: ({x},{y})");
         }
     }
 
