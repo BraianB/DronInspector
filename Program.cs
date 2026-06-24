@@ -122,11 +122,6 @@ class Program
         database.MostrarUltimos5Movimientos(
     simulacionId);
 
-
-
     }
-
-
-
 
 }
